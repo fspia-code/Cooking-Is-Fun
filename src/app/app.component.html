@@ -1,9 +1,12 @@
-<app-header></app-header>
+<app-header (featureSelected)="onNavigate($event)"></app-header>
+<br>
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-            <app-home></app-home>
-            <app-recipe></app-recipe>
+        <router-outlet></router-outlet>
+    <!-- Added ngIf directive to navigate the components
+            <app-home *ngIf="loadedFeature === 'home'"></app-home>
+            <app-recipes *ngIf="loadedFeature1 === 'recipe'"></app-recipes> -->
         </div>
     </div>
 </div>

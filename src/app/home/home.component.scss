@@ -1,153 +1,45 @@
-// _config.scss
-$font-stack: Arial, Helvetica, sans-serif;
-$light-color: #f4f4f4;
-$primary-color: #0e6cff;
-// $primary-color: #e0ffff;
-$secondary-color: #ff8700;
-
-// Set text color based on bg
-@function set-text-color($color) {
-  @if(lightness($color) > 70) {
-    @return #333;
-  } @else {
-    @return #fff;
-  }
-}
-
-// Set background & text color
-@mixin set-background($color) {
-  background-color: $color;
-  color: set-text-color($color)
-}
-
-// _style.scss
-* {
+$primary-color: rgba(11, 245, 136, 0.822);
+$secondary-color: rgb(221, 134, 19);
+*{
   box-sizing: border-box;
-  margin: 0;
-  padding: 0;
 }
 
 body {
-  background-color: $light-color;
-  font-family: $font-stack;
-  line-height: 1.6;
+  background: $primary-color;
+  color: #fff;
+  height: 100%; 
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.5;
 }
 
-img {
-  width: 100%;
+// Headings
+h1, h2, h3 {
+  margin:0;
+  font-weight: 400;
+
+  &.lg-heading {
+    font-size: 6rem;
+  }
+  &.sm-heading {
+    margin-bottom:2rem;
+    padding: 0.2rem 1rem;
+    background: rgba(lighten($primay-color,2), 0.5);
+  }
 }
 
 a {
+  color: #fff;
   text-decoration: none;
 }
 
-.showcase {
-  @include set-background($primary-color);
-  height: 600px;
-
-  nav {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    ul {
-      display: flex;
-      list-style-type: none;
-    }
-
-    li {
-      padding: 15px;
-    }
-
-    a {
-      color: set-text-color($primary-color);
-    }
-
-    a:hover {
-      color: $secondary-color;
-    }
-  }
-
-  &-content {
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 30px;
-
-    img {
-      width: 100%;
-    }
-
-    h1 {
-      font-size: 50px;
-      line-height: 1.2;
-    }
-  }
+header {
+  position:fixed;
+  z-index: 2;
+  width: 100%;
 }
 
-// _utilities.scss
-.container {
-  max-width: 1100px;
-  padding: 0 30px;
-  margin: 0 auto;
-  overflow: auto;
+.text-secondary {
+  color: $secondary-color;
 }
 
-
-// Margin & padding classes
-$spaceamounts: (1,2,3,4,5);
-
-@each $space in $spaceamounts {
-  .m-#{$space} {
-    margin: #{$space}rem;
-  }
-  .my-#{$space} {
-    margin: #{$space}rem 0;
-  }
-
-  .p-#{$space} {
-    padding: #{$space}rem;
-  }
-  .py-#{$space} {
-    padding: #{$space}rem 0;
-  }
-}
-
-// _buttons.scss
-%btn {
-  display: inline-block;
-  border-radius: 5px;
-  padding: 8px 20px;
-  margin: 3px;
-
-  &:hover {
-    transform: scale(.98);
-  }
-}
-
-.btn-primary {
-  @extend %btn;
-  @include set-background(lighten($primary-color, 10%));
-}
-
-.btn-secondary {
-  @extend %btn;
-  @include set-background($secondary-color);
-}
-
-
-// _mobile.scss
-@media(max-width: 700px) {
-  .showcase {
-    height: 400px;
-
-    &-content {
-      text-align: center;
-
-      img {
-        display: none;
-      }
-    }
-  }
-}
