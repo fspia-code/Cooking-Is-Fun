@@ -1,7 +1,10 @@
-import { DropdownDirective } from './recipes/dropdown.directive';
+import { DataStorageService } from './recipes/shared/data-Stroage.service';
+import { RecipeService } from './recipes/recipe.service';
+import { DropdownDirective } from './recipes/shared/dropdown.directive';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
+import { HttpClientModule } from '@angular/common/http'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -30,10 +33,11 @@ import { RecipeStartComponent } from './recipes/recipe-start/recipe-start.compon
   imports: [
     BrowserModule,
     AppRoutingModule,
-    AngularFontAwesomeModule
+    AngularFontAwesomeModule,
+    HttpClientModule
     
   ],
-  providers: [],
+  providers: [RecipeService, DataStorageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
