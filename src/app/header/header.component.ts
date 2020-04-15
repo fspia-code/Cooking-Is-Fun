@@ -1,4 +1,4 @@
-import { DataStorageService } from './../recipes/shared/data-Stroage.service';
+// import { DataStorageService } from './../recipes/shared/data-Stroage.service';
 import { Component } from '@angular/core';
 
 @Component({
@@ -10,15 +10,15 @@ export class HeaderComponent {
 
   collapsed = true;
 
-  constructor(private dataStorageService: DataStorageService){
-
+  constructor(){
+    // private dataStorageService: DataStorageService
   }
-  onSaveData(){
-    this.dataStorageService.storeRecipes();
-  }
-  onFetchData(){
-    this.dataStorageService.fetchRecipes().subscribe();
-  }
+  // onSaveData(){
+  //   this.dataStorageService.storeRecipes();
+  // }
+  // onFetchData(){
+  //   this.dataStorageService.fetchRecipes().subscribe();
+  // }
   }
   
 

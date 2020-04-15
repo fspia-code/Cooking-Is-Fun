@@ -1,16 +1,25 @@
 // _config.scss
-$font-stack: Arial, Helvetica, sans-serif;
-$light-color: #f4f4f4;
-$primary-color: #0e6cff;
-// $primary-color: #e0ffff;
-$secondary-color: #ff8700;
-
-* {
-    box-sizing: border-box;
-    margin: 5;
-    padding: 5;
-  }
+$primary-color: rgba(42, 190, 121, 0.822);
+$secondary-color: rgb(221, 134, 19);
 
 
-
+*{
+  box-sizing: border-box;
   
+}
+
+nav {  
+ background: $primary-color;
+  font-variant: length($list: 50);
+  color: black;
+  height: 100%; 
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.5;
+  padding: 1rem;
+}
+
+.navbar-brand{
+ font-size: 4rem;
+ color: orangered;
+}

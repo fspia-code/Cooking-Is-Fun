@@ -1,4 +1,4 @@
-import { DataStorageService } from './recipes/shared/data-Stroage.service';
+// import { DataStorageService } from './recipes/shared/data-Stroage.service';
 import { RecipeService } from './recipes/recipe.service';
 import { DropdownDirective } from './recipes/shared/dropdown.directive';
 import { BrowserModule } from '@angular/platform-browser';
@@ -16,6 +16,8 @@ import { RecipeItemComponent } from './recipes/recipe-list/recipe-item/recipe-it
 import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component';
 import { RecipeDetailComponent } from './recipes/recipe-detail/recipe-detail.component';
 import { RecipeStartComponent } from './recipes/recipe-start/recipe-start.component';
+import { RegistrationComponent } from './registration/registration.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -28,16 +30,18 @@ import { RecipeStartComponent } from './recipes/recipe-start/recipe-start.compon
     RecipeEditComponent,
     RecipeDetailComponent,
     RecipeStartComponent,
-    DropdownDirective
+    DropdownDirective,
+    RegistrationComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     AngularFontAwesomeModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
     
   ],
-  providers: [RecipeService, DataStorageService],
+  providers: [RecipeService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

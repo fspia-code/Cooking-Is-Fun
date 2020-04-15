@@ -6,7 +6,8 @@ import { RecipesComponent } from './recipes/recipes.component';
 import { HomeComponent } from './home/home.component';
 import { RecipeStartComponent } from './recipes/recipe-start/recipe-start.component';
 import { RecipeDetailComponent } from './recipes/recipe-detail/recipe-detail.component';
-import { RecipeResolverService } from './recipes/recipes-resolver.service';
+import { RegistrationComponent } from './registration/registration.component';
+// import { RecipeResolverService } from './recipes/recipes-resolver.service';
 
 
 
@@ -15,11 +16,15 @@ const approutes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'recipes', component: RecipesComponent, children: [
     { path: '', component: RecipeStartComponent },
-    { path: ':id', component: RecipeDetailComponent, resolve: [RecipeResolverService]},
+    { path: ':id', component: RecipeDetailComponent
+    //  resolve: [RecipeResolverService]
+    },
     { path: 'new', component:RecipeEditComponent},
-    { path: ':id/edit', component:RecipeEditComponent, resolve: [RecipeResolverService]}
+    { path: ':id/edit', component:RecipeEditComponent
+    //  resolve: [RecipeResolverService]
+    }
   ]},
-
+  { path: 'registration', component: RegistrationComponent },
 ];
 
 @NgModule({
